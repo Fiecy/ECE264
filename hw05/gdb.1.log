@@ -1,0 +1,59 @@
+Starting program: /home/shay/a/li1652/264/hw05/calc 
+
+Program received signal SIGINT, Interrupt.
+0x0000000000400692 in _parse_integer (s=0x400a38 "1") at calc.c:39
+39		while(start[i] != '\0') {
+Starting program: /home/shay/a/li1652/264/hw05/calc 
+
+Program received signal SIGINT, Interrupt.
+0x0000000000400672 in _parse_integer (s=0x400a38 "1") at calc.c:41
+41			value += start[i] - (start[i] <= '9' ? '0' : 'a' - 10);
+36	
+37		int value = 0;   // This will be the return value from this function
+38		int i = 0;
+39		while(start[i] != '\0') {
+40			value *= base;
+41			value += start[i] - (start[i] <= '9' ? '0' : 'a' - 10);
+42		}
+43	
+44		return value * sign;
+45	}
+$1 = 0x400a38 "1"
+$2 = 0x400a38 "1"
+A syntax error in expression, near `sign base value i'.
+A syntax error in expression, near `sign'.
+$3 = 0x400a38 "1"
+$4 = 1
+$5 = 10
+$6 = -954437178
+$7 = 0
+39		while(start[i] != '\0') {
+40			value *= base;
+41			value += start[i] - (start[i] <= '9' ? '0' : 'a' - 10);
+39		while(start[i] != '\0') {
+40			value *= base;
+41			value += start[i] - (start[i] <= '9' ? '0' : 'a' - 10);
+39		while(start[i] != '\0') {
+$8 = 49 '1'
+1: start[i] = 49 '1'
+40			value *= base;
+1: start[i] = 49 '1'
+41			value += start[i] - (start[i] <= '9' ? '0' : 'a' - 10);
+1: start[i] = 49 '1'
+39		while(start[i] != '\0') {
+1: start[i] = 49 '1'
+40			value *= base;
+1: start[i] = 49 '1'
+41			value += start[i] - (start[i] <= '9' ? '0' : 'a' - 10);
+1: start[i] = 49 '1'
+39		while(start[i] != '\0') {
+1: start[i] = 49 '1'
+40			value *= base;
+1: start[i] = 49 '1'
+41			value += start[i] - (start[i] <= '9' ? '0' : 'a' - 10);
+1: start[i] = 49 '1'
+39		while(start[i] != '\0') {
+1: start[i] = 49 '1'
+warning: bad display number at or near 'start[i]'
+warning: bad display number at or near 'start'
+40			value *= base;

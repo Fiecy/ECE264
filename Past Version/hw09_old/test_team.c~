@@ -1,0 +1,133 @@
+#include "team.h"
+
+struct Team create_test_team() {
+	struct Person people[] = {
+	  { .name = "Anna"    ,.favorite = &people[4]},
+	  { .name = "Liangts" ,.favorite = &people[1]},
+	  { .name = "YL"      ,.favorite = &people[0]},
+	  { .name = "Momo"    ,.favorite = &people[2]},
+	  { .name = "TTTTTTTTTHHHHHHHHHHIIIIIIIISSSSSSSSS IIIIIISSSSSSSS AAAAAA VVVVVVVVEEEEEEEEERRRRRRRRRYYYYYYY LLLLLLLLOOOOONNGGGGGG NAME", .favorite = &people[4]},
+	};
+	return create_team("GROUP A", sizeof(people)/sizeof(people[0]), people);
+}
+
+int main(int argc, char *argv[]) {
+    //  case 1: normal test
+  
+	struct Team team = create_test_team();
+	fprint_team(&team, stdout);
+
+	struct Person* detach_a_person = detach_person(&team, "TTTTTTTTTHHHHHHHHHHIIIIIIIISSSSSSSSS IIIIIISSSSSSSS AAAAAA VVVVVVVVEEEEEEEEERRRRRRRRRYYYYYYY LLLLLLLLOOOOONNGGGGGG NAME");
+	fprintf(stdout,"detached %s, favorite %s\n",detach_a_person->name, detach_a_person->favorite->name);
+	fprint_team(&team, stdout);
+			
+	struct Person* add_a_person = add_person(&team, "YFSB", "Momo");
+	fprintf(stdout,"add person = %s favorite = %s\n", add_a_person->name, add_a_person->favorite->name);
+	fprint_team(&team, stdout);
+	
+	struct Person* the_person = find_person(&team, "YL");
+	fprintf(stdout,"find_person = %s, favorite = %s\n",the_person->name, the_person->favorite->name);
+	fprint_team(&team, stdout);
+	
+	add_a_person = add_person(&team, "YFSB", "YL");
+	fprintf(stdout,"add person = %s favorite = %s\n", add_a_person->name, add_a_person->favorite->name);
+	fprint_team(&team, stdout);
+
+	the_person = find_person(&team, "YFSB");
+	fprintf(stdout,"find_person = %s, favorite = %s\n",the_person->name, the_person->favorite->name);
+	fprint_team(&team, stdout);
+
+	add_a_person = add_person(&team, "Hex", "YFSB");
+	fprintf(stdout,"add person = %s favorite = %s favorite'sfavorite = %s\n", add_a_person->name, add_a_person->favorite->name, add_a_person->favorite->favorite->name);
+	fprint_team(&team, stdout);
+
+	struct Person* the_person2 = find_person(&team, "66666");
+	if (the_person2 == NULL) {
+	  fprintf(stdout, "find_person: There is no 66666 in the team\n");
+	}
+	fprint_team(&team, stdout);
+
+	struct Person* detach_a_person2 = detach_person(&team, "YFSB");
+	fprintf(stdout,"detached %s, favorite %s\n",detach_a_person2->name, detach_a_person2->favorite->name);
+	fprint_team(&team, stdout);
+					
+	free_team(&team);
+	free_person(detach_a_person);
+	free_person(detach_a_person2);
+		
+    //  case 2: NULL team	
+						
+	team = create_team("Some Empty Team", 0, NULL);
+	fprint_team(&team, stdout);
+
+	detach_a_person = detach_person(&team, "YFSB");
+	if (detach_a_person == NULL) {
+	  fprintf(stdout,"detach_person: There is no YFSB in the team\n");
+	}
+	fprint_team(&team, stdout);
+
+	the_person = find_person(&team, "YL");
+	if (the_person == NULL) {
+	  fprintf(stdout,"find_person: There is no YL in the team\n");
+	}
+	fprint_team(&team, stdout);
+		
+	add_a_person = add_person(&team, "YFSB", "YFSB");
+	fprintf(stdout,"add person = %s favorite = %s\n", add_a_person->name, add_a_person->favorite->name);
+	fprint_team(&team, stdout);
+	
+	add_a_person = add_person(&team, "Anna", "YFSB");
+	fprintf(stdout,"add person = %s favorite = %s\n", add_a_person->name, add_a_person->favorite->name);
+	fprint_team(&team, stdout);
+	
+	add_a_person = add_person(&team, "Momo", "Anna");
+	fprintf(stdout,"add person = %s favorite = %s\n", add_a_person->name, add_a_person->favorite->name);
+	fprint_team(&team, stdout);
+
+	detach_a_person = detach_person(&team, "YFSB");
+	fprintf(stdout,"detached %s, favorite %s\n",detach_a_person->name, detach_a_person->favorite->name);
+	fprint_team(&team, stdout);
+		
+	detach_a_person2 = detach_person(&team, "Anna");
+	fprintf(stdout,"detached %s, favorite %s\n",detach_a_person2->name, detach_a_person2->favorite->name);
+	fprint_team(&team, stdout);
+
+	struct Person* detach_a_person3 = detach_person(&team, "Momo");
+	fprintf(stdout,"detached %s, favorite %s\n",detach_a_person3->name, detach_a_person3->favorite->name);
+	fprint_team(&team, stdout);
+
+	free_team(&team);
+	
+	free_person(detach_a_person);	
+	free_person(detach_a_person2);
+	free_person(detach_a_person3);
+
+	//  case 3: copy_team (team is not a NULL team)
+	team = create_test_team();
+	fprint_team(&team, stdout);
+
+	struct Team newteam = copy_team(&team);
+	fprint_team(&newteam, stdout);
+
+	add_a_person = add_person(&newteam, "YFSB", "YL");
+	fprintf(stdout,"add person = %s favorite = %s\n", add_a_person->name, add_a_person->favorite->name);
+	fprint_team(&newteam, stdout);
+
+	the_person = find_person(&newteam, "YFSB");
+	fprintf(stdout,"find_person = %s, favorite = %s\n",the_person->name, the_person->favorite->name);
+	fprint_team(&newteam, stdout);
+
+	add_a_person = add_person(&newteam, "Hex", "YFSB");
+	fprintf(stdout,"add person = %s favorite = %s favorite'sfavorite = %s\n", add_a_person->name, add_a_person->favorite->name, add_a_person->favorite->favorite->name);
+	fprint_team(&newteam, stdout);
+
+	detach_a_person = detach_person(&newteam, "YFSB");
+	fprintf(stdout,"detached %s, favorite %s\n",detach_a_person->name, detach_a_person->favorite->name);
+	fprint_team(&newteam, stdout);
+
+	free_team(&team);
+	free_team(&newteam);
+	free_person(detach_a_person);		
+	return EXIT_SUCCESS;	
+}
+/* vim: set tabstop=4 shiftwidth=4 fileencoding=utf-8 noexpandtab: */

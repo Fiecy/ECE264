@@ -1,0 +1,121 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdarg.h>
+#include "mintf.h"
+
+void mintf(const char *format, ...) {
+	va_list myst;
+	va_start(myst, format);
+	double inputdouble = 0;
+	int inte = 0;
+	int deci = 0;
+	const char *inputstring;
+
+	while (*format != '\0') {
+		if (*format == '%'){  // find the %
+			format++;
+			switch(*format) {  // determine what is next to the %
+				case 'd':
+					print_integer(va_arg(myst, int), 10, "");  // print decimal
+				break;
+
+				case 'x':
+					print_integer(va_arg(myst, int), 16, "0x");  // print hex
+				break;
+
+				case 'b':
+					print_integer(va_arg(myst, int), 2, "0b");  // print binary
+				break;
+
+				case '$':
+					inputdouble = va_arg(myst, double);  // print a $ sign with 2 digit after the '.'
+					inte = (int)inputdouble;
+					print_integer(inte, 10, "$");
+					deci = (int)(inputdouble * 100 - inte * 100);
+					if (deci < 0) {  // print -abc.def instead of -abc.-def
+					deci = - deci;
+					}
+					fputc('.', stdout);
+					if (deci <= 9) {  // print abc.0d instead of abc.d
+					fputc('0', stdout);
+					}
+					print_integer(deci, 10, "");
+				break;
+
+				case 's':
+					inputstring = va_arg(myst, char*);  // print a string
+					while (*inputstring != '\0') {
+						fputc(*inputstring, stdout);
+						inputstring++;
+					}
+				break;
+
+				case 'c':
+					fputc(va_arg(myst, int), stdout);  // print a character
+				break;
+				
+				case '%':
+					fputc('%', stdout);  // print one % instead of two
+				break;
+
+			        case '\0':
+				        fputc('%',stdout); // if % at the end of string
+					format--;
+				break;
+
+				default:  // print the case that is not listed above as what it is
+					format--;
+					fputc(*format, stdout);
+					format++;
+					fputc(*format, stdout);
+					break;
+			}
+		}
+		else {  // if there is no %, print directly
+		fputc(*format, stdout);
+		}
+		format++;
+	}
+	va_end(myst);
+}
+
+
+void print_integer(int n, int radix, char* prefix) {
+	char allnum[] = "0123456789abcdefghijklmnopqrstuvwxyz";
+	int dig = 0;
+	char data[200] = "0";
+	int j = 0;
+
+	if (n < 0) {  // print a '-' if n is a negative number
+	fputc('-', stdout);
+	}
+
+	while (n >= radix) {  // convert positive number
+	data[dig] = allnum[n % radix];
+	n = n / radix;
+	dig++;
+	}
+
+	if (n > 0) {  // incase if n is less than radix
+	data[dig] = allnum[n % radix];
+	}
+
+	while (n <= -radix) {  // convert negative number
+	data[dig] = allnum[-(n % radix)];
+	n = n / radix;
+	dig++;
+	}
+
+	if (n < 0) {  // incase if n does not need to be converted
+	data[dig] = allnum[-n];
+	}
+
+	while (prefix[j] != '\0') {  // print prefix
+	fputc(prefix[j], stdout);
+	j++;
+	}
+
+	for (int i = dig; i > -1; i--) {  // print the converted result
+	fputc(data[i], stdout);
+	}
+}

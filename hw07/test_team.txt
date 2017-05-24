@@ -1,0 +1,12 @@
+There are 3 people on the team.
+YiLi's favorite is Nana.
+The leader shall be YiLi.
+There are 5 people on the team.
+test_a_long_string_alsdjfoiuiokwqna,msndoijcvhz's favorite is test_a_long_string_alsdjfoiuiokwqna,msndoijcvhz.
+The leader shall be YFSB.
+There are 4 people on the team.
+Doubi's favorite is YFSB.
+The leader shall be Nana.
+There are 1 people on the team.
+YiLi's favorite is YiLi.
+The leader shall be YiLi.

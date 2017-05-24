@@ -1,0 +1,3 @@
+Breakpoint 1 at 0x40078c: file test_calc.c, line 5.
+Error detected on fd 0
+error detected on stdin

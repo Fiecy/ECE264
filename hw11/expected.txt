@@ -1,0 +1,18 @@
+root is Momo
+Momo's course list:2
+        ECE301
+        ECE362
+Left: HYF's course list:3
+        VIP
+        ECE362
+        ECE264
+Right: Liangts's course list:1
+        ECE362
+Left: Hex's course list:2
+        ECE362
+        ECE337
+Right: YL's course list:3
+        ECE264
+        ECE362
+        ECE337
+WORD NOT FOUND, count = 0

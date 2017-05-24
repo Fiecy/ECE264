@@ -1,0 +1,39 @@
+set logging file gdb.1.log
+set logging on
+set history filename gdb.1.history
+set history save
+run
+run
+list
+print s
+print start
+print start sign base value i
+print start sign
+print start
+print sign
+print base
+print value
+print i
+step
+step
+step
+next
+next
+next
+next
+print start[i]
+display start[i]
+next
+next
+next
+next
+next
+next
+next
+next
+next
+undisplay start[i]
+undisplay start
+undisplay 1
+next
+quit

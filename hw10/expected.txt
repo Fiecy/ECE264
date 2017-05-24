@@ -1,0 +1,55 @@
+case 1: normal test - basic function
+
+Normal test with 4 people
+- leader:  Momo
+- members: Anna    (favorite: YL)
+           Liangts (favorite: Liangts)
+           YL      (favorite: Momo)
+           Momo    (favorite: Momo)
+add person = HEX, favorite = noneNormal test with 4 people
+- leader:  Momo
+- members: Anna    (favorite: YL)
+           Liangts (favorite: Liangts)
+           YL      (favorite: Momo)
+           Momo    (favorite: Momo)
+           HEX     (favorite: none)
+add person = YFSB favorite = YL second favorite = Anna
+Normal test with 4 people
+- leader:  Anna
+- members: Anna    (favorite: YL)
+           Liangts (favorite: Liangts)
+           YL      (favorite: Momo)
+           Momo    (favorite: Momo)
+           HEX     (favorite: none)
+           YFSB    (favorite: YL)
+add Liangts to YL's favorites
+YL's 2nd favorite is YL
+Normal test with 4 people
+- leader:  Anna
+- members: Anna    (favorite: YL)
+           Liangts (favorite: Liangts)
+           YL      (favorite: Momo)
+           Momo    (favorite: Momo)
+           HEX     (favorite: none)
+           YFSB    (favorite: YL)
+detached Momo, favorite Momo
+Normal test with 4 people
+- leader:  YL
+- members: Anna    (favorite: YL)
+           Liangts (favorite: Liangts)
+           YL      (favorite: Momo)
+           HEX     (favorite: none)
+           YFSB    (favorite: YL)
+
+case 3: create team of size 0, 1, 2, 3
+
+Another Empty Team
+- leader:  none
+- members: (none)
+team3_0.head & team3_0.tail == NULL
+group of 3 people
+- leader:  none
+- members: Anna    (favorite: none)
+           Liangts (favorite: none)
+           YL      (favorite: none)
+team->head = Anna, team->tail = YL

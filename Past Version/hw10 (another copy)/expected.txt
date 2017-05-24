@@ -1,0 +1,57 @@
+case 1: normal test - basic function
+
+Normal test with 4 people
+- members: Anna    (favorite: YL)
+           Liangts (favorite: none)
+           YL      (favorite: Anna)
+           Momo    (favorite: Liangts)
+add person = HEX, favorite = noneNormal test with 4 people
+- members: Anna    (favorite: YL)
+           Liangts (favorite: none)
+           YL      (favorite: Anna)
+           Momo    (favorite: Liangts)
+           HEX     (favorite: none)
+add person = YFSB favorite = YFSB second favorite = Anna
+Normal test with 4 people
+- members: Anna    (favorite: YL)
+           Liangts (favorite: none)
+           YL      (favorite: Anna)
+           Momo    (favorite: Liangts)
+           HEX     (favorite: none)
+           YFSB    (favorite: YFSB)
+add Liangts to YL's favorites
+YL's 2nd favorite is Liangts
+Normal test with 4 people
+- members: Anna    (favorite: YL)
+           Liangts (favorite: none)
+           YL      (favorite: Anna)
+           Momo    (favorite: Liangts)
+           HEX     (favorite: none)
+           YFSB    (favorite: YFSB)
+detached YL, favorite Anna
+Normal test with 4 people
+- members: Anna    (favorite: YL)
+           Liangts (favorite: none)
+           Momo    (favorite: Liangts)
+           HEX     (favorite: none)
+           YFSB    (favorite: YFSB)
+team->head = Anna, team->tail = YFSB
+team->head->favorites = YL, team->tail->favorites = YFSB
+team->head->favorites->next = Momo
+team->head->next = Liangts
+team.head->next has no favorite
+
+case 2: copy_team (team is not a NULL team)
+
+Normal test with 4 people
+- members: Anna    (favorite: YL)
+           Liangts (favorite: none)
+           YL      (favorite: Anna)
+           Momo    (favorite: Liangts)
+team->head = Anna, team->tail = Momo
+Normal test with 4 people
+- members: Anna    (favorite: YL)
+           Liangts (favorite: none)
+           YL      (favorite: Anna)
+           Momo    (favorite: Liangts)
+team->head = Anna, team->tail = Momo

@@ -1,0 +1,13 @@
+struct Person {
+	char* name;
+	struct Person* favorite;
+};
+
+struct Team {
+	struct Person people;
+	int population;
+};
+
+struct Team create_team(int, char* [], int*);
+void free_team(struct Team*);
+struct Person* pick_leader(struct Team*);

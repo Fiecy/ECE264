@@ -1,0 +1,45 @@
+TAs
+- members: Anna        (favorite: Liangts)
+           Liangts     (favorite: Liangts)
+           YL          (favorite: Anna)
+           Momo        (favorite: YL)
+add person = YFSB favorite = Momo
+TAs
+- members: Anna        (favorite: Liangts)
+           Liangts     (favorite: Liangts)
+           YL          (favorite: Anna)
+           Momo        (favorite: YL)
+           YFSB        (favorite: Momo)
+find_person = YL, favorite = Anna
+TAs
+- members: Anna        (favorite: Liangts)
+           Liangts     (favorite: Liangts)
+           YL          (favorite: Anna)
+           Momo        (favorite: YL)
+           YFSB        (favorite: Momo)
+detached Liangts, favorite Liangts
+TAs
+- members: Anna        (favorite: Liangts)
+           YL          (favorite: Anna)
+           Momo        (favorite: YL)
+           YFSB        (favorite: Momo)
+detached YFSB, favorite Momo
+TAs
+- members: Anna        (favorite: Liangts)
+           YL          (favorite: Anna)
+           Momo        (favorite: YL)
+Some Empty Team
+- members: (none)
+add person = YFSB favorite = YFSB
+Some Empty Team
+- members: YFSB        (favorite: YFSB)
+detached YFSB, favorite YFSB
+Some Empty Team
+- members: (none)
+add person = Anna favorite = Anna
+Some Empty Team
+- members: Anna        (favorite: Anna)
+add person = Momo favorite = Anna
+Some Empty Team
+- members: Anna        (favorite: Anna)
+           Momo        (favorite: Anna)

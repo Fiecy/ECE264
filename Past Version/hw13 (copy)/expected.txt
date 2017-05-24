@@ -1,0 +1,9 @@
+check_bmp_header failed
+check_header succeed
+have the following issue
+write_bmp failed because fp == NULL
+write car.bmp succeed
+crop_image failed because crop size is larger than the original size
+write car.bmp succeed
+write_bmp failed because fp == NULL
+write car.bmp succeed

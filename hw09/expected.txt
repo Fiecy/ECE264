@@ -1,0 +1,196 @@
+case 1: normal test - basic function
+
+Normal test with 4 people
+- members: Anna    (favorite: Liangts)
+- members: Liangts (favorite: Liangts)
+- members: YL      (favorite: Anna)
+- members: Momo    (favorite: YL)
+team->head = Anna, team->tail = Momo
+detached Liangts, favorite Liangts
+Normal test with 4 people
+- members: Anna (favorite: Liangts)
+- members: YL   (favorite: Anna)
+- members: Momo (favorite: YL)
+add person = YFSB favorite = Momo
+Normal test with 4 people
+- members: Anna (favorite: Liangts)
+- members: YL   (favorite: Anna)
+- members: Momo (favorite: YL)
+- members: YFSB (favorite: Momo)
+team->head = Anna, team->tail = YFSB
+find_person = YL, favorite = Anna
+Normal test with 4 people
+- members: Anna (favorite: Liangts)
+- members: YL   (favorite: Anna)
+- members: Momo (favorite: YL)
+- members: YFSB (favorite: Momo)
+detach a person not in team return NULL
+find a person not in team return NULL
+
+case 2: empty team
+
+Some Empty Team
+- members: (none)
+team2.head & team2.tail == NULL
+detach a person not in team return NULL
+find a person not in team return NULL
+add person = YFSB favorite = YFSB
+Some Empty Team
+- members: YFSB (favorite: YFSB)
+team->head = YFSB, team->tail = YFSB
+find_person = YFSB, favorite = YFSB
+Some Empty Team
+- members: YFSB (favorite: YFSB)
+detached YFSB, favorite YFSB
+Some Empty Team
+- members: (none)
+team2.head & team2.tail == NULL
+add person = YFSB favorite = YFSB
+Some Empty Team
+- members: YFSB (favorite: YFSB)
+add person = YL favorite = YFSB
+Some Empty Team
+- members: YFSB (favorite: YFSB)
+- members: YL   (favorite: YFSB)
+team->head = YFSB, team->tail = YL
+add person = Liangts favorite = YL
+Some Empty Team
+- members: YFSB    (favorite: YFSB)
+- members: YL      (favorite: YFSB)
+- members: Liangts (favorite: YL)
+
+case 3: create team of size 0, 1, 2, 3
+
+Another Empty Team
+- members: (none)
+team3_0.head & team3_0.tail == NULL
+Team of 1 people
+- members: Anna (favorite: Anna)
+team->head = Anna, team->tail = Anna
+Team of 2 people
+- members: Anna    (favorite: Liangts)
+- members: Liangts (favorite: Liangts)
+team->head = Anna, team->tail = Liangts
+group of 3 people
+- members: Anna    (favorite: YL)
+- members: Liangts (favorite: Liangts)
+- members: YL      (favorite: Anna)
+team->head = Anna, team->tail = YL
+
+case 4: create team of size 1, 2, 3 with operation
+
+Team of 1 people
+- members: Anna (favorite: Anna)
+team->head = Anna, team->tail = Anna
+find a person not in team return NULL
+find_person = Anna, favorite = Anna
+Team of 1 people
+- members: Anna (favorite: Anna)
+detach a person not in team return NULL
+detached Anna, favorite Anna
+Team of 1 people
+- members: (none)
+detach the Anna twice return NULL
+Team of 1 people
+- members: (none)
+add person = YFSB favorite = YFSB
+Team of 1 people
+- members: YFSB (favorite: YFSB)
+team->head = YFSB, team->tail = YFSB
+Team of 2 people
+- members: Anna    (favorite: Liangts)
+- members: Liangts (favorite: Liangts)
+team->head = Anna, team->tail = Liangts
+group of 3 people
+- members: Anna    (favorite: YL)
+- members: Liangts (favorite: Liangts)
+- members: YL      (favorite: Anna)
+team->head = Anna, team->tail = YL
+case 5: start with a full team and detach to empty
+
+Normal test with 4 people
+- members: Anna    (favorite: Liangts)
+- members: Liangts (favorite: Liangts)
+- members: YL      (favorite: Anna)
+- members: Momo    (favorite: YL)
+team->head = Anna, team->tail = Momo
+detached Anna, favorite Liangts
+Normal test with 4 people
+- members: Liangts (favorite: Liangts)
+- members: YL      (favorite: Anna)
+- members: Momo    (favorite: YL)
+team->head = Liangts, team->tail = Momo
+detached Momo, favorite YL
+Normal test with 4 people
+- members: Liangts (favorite: Liangts)
+- members: YL      (favorite: Anna)
+team->head = Liangts, team->tail = YL
+detached YL, favorite Anna
+Normal test with 4 people
+- members: Liangts (favorite: Liangts)
+team->head = Liangts, team->tail = Liangts
+detached Liangts, favorite Liangts
+Normal test with 4 people
+- members: (none)
+team5.head & team5.tail == NULL
+detach the Anna twice return NULL
+Normal test with 4 people
+- members: (none)
+team5.head & team5.tail == NULL
+
+case 6: copy_team (team is not a NULL team)
+
+Normal test with 4 people
+- members: Anna    (favorite: Liangts)
+- members: Liangts (favorite: Liangts)
+- members: YL      (favorite: Anna)
+- members: Momo    (favorite: YL)
+team->head = Anna, team->tail = Momo
+Normal test with 4 people
+- members: Anna    (favorite: Liangts)
+- members: Liangts (favorite: Liangts)
+- members: YL      (favorite: Anna)
+- members: Momo    (favorite: YL)
+team->head = Anna, team->tail = Momo
+add person = YFSB favorite = YL
+Normal test with 4 people
+- members: Anna    (favorite: Liangts)
+- members: Liangts (favorite: Liangts)
+- members: YL      (favorite: Anna)
+- members: Momo    (favorite: YL)
+- members: YFSB    (favorite: YL)
+team->head = Anna, team->tail = YFSB
+find_person = YFSB, favorite = YL
+Normal test with 4 people
+- members: Anna    (favorite: Liangts)
+- members: Liangts (favorite: Liangts)
+- members: YL      (favorite: Anna)
+- members: Momo    (favorite: YL)
+- members: YFSB    (favorite: YL)
+team->head = Anna, team->tail = YFSB
+add person = Hex favorite = YFSB favorite'sfavorite = YL
+Normal test with 4 people
+- members: Anna    (favorite: Liangts)
+- members: Liangts (favorite: Liangts)
+- members: YL      (favorite: Anna)
+- members: Momo    (favorite: YL)
+- members: YFSB    (favorite: YL)
+- members: Hex     (favorite: YFSB)
+team->head = Anna, team->tail = Hex
+detached Hex, favorite YFSB
+Normal test with 4 people
+- members: Anna    (favorite: Liangts)
+- members: Liangts (favorite: Liangts)
+- members: YL      (favorite: Anna)
+- members: Momo    (favorite: YL)
+- members: YFSB    (favorite: YL)
+team->head = Anna, team->tail = YFSB
+
+case 7: copy_team - empty team
+
+case 7: Empty Team
+- members: (none)
+team7.head & team7.tail == NULL
+case 7: Empty Team
+- members: (none)
+newteam2.head & newteam2.tail == NULL

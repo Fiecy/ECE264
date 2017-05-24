@@ -1,0 +1,33 @@
+BST_array:
+array[0] = 1
+array[1] = 2
+array[2] = 5
+array[3] = 6
+array[4] = 7
+merge_sort_array:
+array2[0] = 1
+array2[1] = 2
+array2[2] = 5
+array2[3] = 6
+array2[4] = 7
+quick sort:
+array3[0] = 1
+array3[1] = 2
+array3[2] = 5
+array3[3] = 6
+array3[4] = 7
+BST_array:
+array4[0] = 5
+merge_sort_array:
+array5[0] = 5
+quick sort:
+array6[0] = 5
+BST_array:
+array7[0] = 2
+array7[1] = 5
+merge_sort_array:
+array8[0] = 2
+array8[1] = 5
+quick sort:
+array9[0] = 2
+array9[1] = 5

@@ -1,0 +1,32 @@
+ /* vim: set tabstop=4 shiftwidth=4 fileencoding=utf-8 noexpandtab: */
+#include <stdio.h>
+#include <stdlib.h>
+
+char* my_strdup(const char* original) {
+	// TODO
+        int i = 0;
+	int j = 0;
+
+	while (original[j] != '\0'){
+	  j++;
+	}
+  	char* t = malloc(sizeof(*original) * (j+1));
+	do {
+	  t[i] = original[i];
+	  i++;
+	} while (original[i] != '\0');
+	t[i] = original[i];
+        
+	return t;
+}
+
+int main(int argc, char *argv[]) {
+	char s[] = "abc\n";
+	fputs(s, stdout);  // Should print "abc" followed by a newline ('\n')
+
+	char* t = my_strdup(s);
+	fputs(t, stdout);  // Should print "abc" followed by a newline ('\n')
+	free(t);
+
+	return EXIT_SUCCESS;
+}

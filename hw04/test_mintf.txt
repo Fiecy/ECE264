@@ -1,0 +1,20 @@
+try print 0: 0
+try INT_MAX in radix 36: zik0zj
+try INT_MIN in radix 18: -3928g3h2
+alksLSKD$#^%jaks%*@!
+input 521 = output 521
+724 = 0x2d4
+521 = 0b1000001001
+%a and %a have the same output
+YL521 is my name
+Tuition fee cost about $16987.65, so expensive.
+Tuition fee cost about -$123.08, so expensive.
+YL's bank balance is -$16987.65.
+Excess parameters are ignored: -543
+Parameters not enough: 521724 974718640 0
+Parameters of different type 0x4010e1
+ECE264
+
+HelloWorld, drop rate of ECE264 is 0b100%! Hail ECE 0x264!
+INT_MAX in %b = 0b1111111111111111111111111111111
+INT_MIN in %b = -0b10000000000000000000000000000000

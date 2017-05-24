@@ -1,0 +1,98 @@
+GROUP A
+- members: Anna                                                                                                                    (favorite: TTTTTTTTTHHHHHHHHHHIIIIIIIISSSSSSSSS IIIIIISSSSSSSS AAAAAA VVVVVVVVEEEEEEEEERRRRRRRRRYYYYYYY LLLLLLLLOOOOONNGGGGGG NAME)
+- members: Liangts                                                                                                                 (favorite: Liangts)
+- members: YL                                                                                                                      (favorite: Anna)
+- members: Momo                                                                                                                    (favorite: YL)
+- members: TTTTTTTTTHHHHHHHHHHIIIIIIIISSSSSSSSS IIIIIISSSSSSSS AAAAAA VVVVVVVVEEEEEEEEERRRRRRRRRYYYYYYY LLLLLLLLOOOOONNGGGGGG NAME (favorite: TTTTTTTTTHHHHHHHHHHIIIIIIIISSSSSSSSS IIIIIISSSSSSSS AAAAAA VVVVVVVVEEEEEEEEERRRRRRRRRYYYYYYY LLLLLLLLOOOOONNGGGGGG NAME)
+detached TTTTTTTTTHHHHHHHHHHIIIIIIIISSSSSSSSS IIIIIISSSSSSSS AAAAAA VVVVVVVVEEEEEEEEERRRRRRRRRYYYYYYY LLLLLLLLOOOOONNGGGGGG NAME, favorite TTTTTTTTTHHHHHHHHHHIIIIIIIISSSSSSSSS IIIIIISSSSSSSS AAAAAA VVVVVVVVEEEEEEEEERRRRRRRRRYYYYYYY LLLLLLLLOOOOONNGGGGGG NAME
+GROUP A
+- members: Anna    (favorite: TTTTTTTTTHHHHHHHHHHIIIIIIIISSSSSSSSS IIIIIISSSSSSSS AAAAAA VVVVVVVVEEEEEEEEERRRRRRRRRYYYYYYY LLLLLLLLOOOOONNGGGGGG NAME)
+- members: Liangts (favorite: Liangts)
+- members: YL      (favorite: Anna)
+- members: Momo    (favorite: YL)
+add person = YFSB favorite = Momo
+GROUP A
+- members: Anna    (favorite: TTTTTTTTTHHHHHHHHHHIIIIIIIISSSSSSSSS IIIIIISSSSSSSS AAAAAA VVVVVVVVEEEEEEEEERRRRRRRRRYYYYYYY LLLLLLLLOOOOONNGGGGGG NAME)
+- members: Liangts (favorite: Liangts)
+- members: YL      (favorite: Anna)
+- members: Momo    (favorite: YL)
+- members: YFSB    (favorite: Momo)
+find_person = YL, favorite = Anna
+GROUP A
+- members: Anna    (favorite: TTTTTTTTTHHHHHHHHHHIIIIIIIISSSSSSSSS IIIIIISSSSSSSS AAAAAA VVVVVVVVEEEEEEEEERRRRRRRRRYYYYYYY LLLLLLLLOOOOONNGGGGGG NAME)
+- members: Liangts (favorite: Liangts)
+- members: YL      (favorite: Anna)
+- members: Momo    (favorite: YL)
+- members: YFSB    (favorite: Momo)
+add person = YFSB favorite = YL
+GROUP A
+- members: Anna    (favorite: TTTTTTTTTHHHHHHHHHHIIIIIIIISSSSSSSSS IIIIIISSSSSSSS AAAAAA VVVVVVVVEEEEEEEEERRRRRRRRRYYYYYYY LLLLLLLLOOOOONNGGGGGG NAME)
+- members: Liangts (favorite: Liangts)
+- members: YL      (favorite: Anna)
+- members: Momo    (favorite: YL)
+- members: YFSB    (favorite: Momo)
+- members: YFSB    (favorite: YL)
+find_person = YFSB, favorite = Momo
+GROUP A
+- members: Anna    (favorite: TTTTTTTTTHHHHHHHHHHIIIIIIIISSSSSSSSS IIIIIISSSSSSSS AAAAAA VVVVVVVVEEEEEEEEERRRRRRRRRYYYYYYY LLLLLLLLOOOOONNGGGGGG NAME)
+- members: Liangts (favorite: Liangts)
+- members: YL      (favorite: Anna)
+- members: Momo    (favorite: YL)
+- members: YFSB    (favorite: Momo)
+- members: YFSB    (favorite: YL)
+add person = Hex favorite = YFSB favorite'sfavorite = Momo
+GROUP A
+- members: Anna    (favorite: TTTTTTTTTHHHHHHHHHHIIIIIIIISSSSSSSSS IIIIIISSSSSSSS AAAAAA VVVVVVVVEEEEEEEEERRRRRRRRRYYYYYYY LLLLLLLLOOOOONNGGGGGG NAME)
+- members: Liangts (favorite: Liangts)
+- members: YL      (favorite: Anna)
+- members: Momo    (favorite: YL)
+- members: YFSB    (favorite: Momo)
+- members: YFSB    (favorite: YL)
+- members: Hex     (favorite: YFSB)
+find_person: There is no 66666 in the team
+GROUP A
+- members: Anna    (favorite: TTTTTTTTTHHHHHHHHHHIIIIIIIISSSSSSSSS IIIIIISSSSSSSS AAAAAA VVVVVVVVEEEEEEEEERRRRRRRRRYYYYYYY LLLLLLLLOOOOONNGGGGGG NAME)
+- members: Liangts (favorite: Liangts)
+- members: YL      (favorite: Anna)
+- members: Momo    (favorite: YL)
+- members: YFSB    (favorite: Momo)
+- members: YFSB    (favorite: YL)
+- members: Hex     (favorite: YFSB)
+detached YFSB, favorite Momo
+GROUP A
+- members: Anna    (favorite: TTTTTTTTTHHHHHHHHHHIIIIIIIISSSSSSSSS IIIIIISSSSSSSS AAAAAA VVVVVVVVEEEEEEEEERRRRRRRRRYYYYYYY LLLLLLLLOOOOONNGGGGGG NAME)
+- members: Liangts (favorite: Liangts)
+- members: YL      (favorite: Anna)
+- members: Momo    (favorite: YL)
+- members: YFSB    (favorite: YL)
+- members: Hex     (favorite: YFSB)
+Some Empty Team
+- members: (none)
+detach_person: There is no YFSB in the team
+Some Empty Team
+- members: (none)
+find_person: There is no YL in the team
+Some Empty Team
+- members: (none)
+add person = YFSB favorite = YFSB
+Some Empty Team
+- members: YFSB (favorite: YFSB)
+add person = Anna favorite = YFSB
+Some Empty Team
+- members: YFSB (favorite: YFSB)
+- members: Anna (favorite: YFSB)
+add person = Momo favorite = Anna
+Some Empty Team
+- members: YFSB (favorite: YFSB)
+- members: Anna (favorite: YFSB)
+- members: Momo (favorite: Anna)
+detached YFSB, favorite YFSB
+Some Empty Team
+- members: Anna (favorite: YFSB)
+- members: Momo (favorite: Anna)
+detached Anna, favorite YFSB
+Some Empty Team
+- members: Momo (favorite: Anna)
+detached Momo, favorite Anna
+Some Empty Team
+- members: (none)

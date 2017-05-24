@@ -1,0 +1,55 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <limits.h>
+#include "smintf.h"
+
+int main(int argc, char* argv[]){
+  char* s;
+
+	  s = smintf("\nalksLSKD$#^%jaks%*@!\n");
+	  fputs(s, stdout);
+	  free(s);
+	  s = smintf("input %d = output %d\n", 521, 521);
+	  fputs(s, stdout);
+	  free(s);
+	  s = smintf("%d = %x\n", 724, 724);
+	  fputs(s, stdout);
+	  free(s);
+	  s = smintf("%d = %b\n", 521, 521);
+	  fputs(s, stdout);
+	  free(s);
+	  s = smintf("%%a and %a have the same output\n");
+	  fputs(s, stdout);
+	  free(s);
+	  s = smintf("%s is my name\n", "YL521");
+	  fputs(s, stdout);
+	  free(s);
+	  s = smintf("Tuition fee cost about %$, so expensive.\n", 16987.6543);
+	  fputs(s, stdout);
+	  free(s);
+	  s = smintf("Tuition fee cost about %$, so expensive.\n", -123.08);
+	  fputs(s, stdout);
+	  free(s);
+	  s = smintf("%s bank balance is %$.\n", "YL's", -16987.6543);
+	  fputs(s, stdout);
+	  free(s);
+	  s = smintf("Excess parameters are ignored: %d\n", -543, 321, -94875);
+	  fputs(s, stdout);
+	  free(s);
+	  s = smintf("HelloWorld, drop rate of %s is %b%%! Hail %c%c%c %x%d!\n", "ECE264", 4, 'E', 'C', 'E', 38, 4);
+	  fputs(s, stdout);
+	  free(s);
+	  s = smintf("INT_MAX in %%b = %b\n", INT_MAX);
+	  fputs(s, stdout);
+	  free(s);
+	  s = smintf("INT_MIN in %%b = %b\n", INT_MIN);
+	  fputs(s, stdout);
+	  free(s);
+	  s = smintf("%%%");
+	  fputs(s, stdout);
+	  free(s);
+
+  return EXIT_SUCCESS;
+}

@@ -1,0 +1,5 @@
+set logging file gdb.2.log
+set logging on
+set history filename gdb.2.history
+set history save
+break test_calc.c:main

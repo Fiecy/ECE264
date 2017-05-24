@@ -1,0 +1,86 @@
+Breakpoint 1 at 0x40078c: file test_calc.c, line 5.
+Error detected on fd 0
+error detected on stdin
+Breakpoint 1 at 0x40078c: file test_calc.c, line 5.
+Starting program: /home/shay/a/li1652/264/hw05/calc 
+
+Breakpoint 1, main (argc=1, argv=0x7fffffffe4a8) at test_calc.c:5
+5		int result = calculate("1", '+', "1");
+#0  main (argc=1, argv=0x7fffffffe4a8) at test_calc.c:5
+5		int result = calculate("1", '+', "1");
+1	#include <stdio.h>
+2	#include "calc.h"
+3	
+4	int main(int argc, char *argv[]) {
+5		int result = calculate("1", '+', "1");
+6		printf("1 + 1 = %d\n", result);
+7	
+8		result = calculate("0xa", '+', "3");
+9		printf("0xa + 3 = %d\n", result);
+10	
+main (argc=1, argv=0x7fffffffe4a8) at test_calc.c:8
+8		result = calculate("0xa", '+', "3");
+Too few arguments in function call.
+$1 = {int (const char *, const char, const char *)} 0x400566 <calculate>
+calculate (lhs_str=0x400a48 "0xa", operator=43 '+', rhs_str=0x400a46 "3")
+    at calc.c:10
+10		int lhs_int = _parse_integer(lhs_str);
+_parse_integer (s=0x400a48 "0xa") at calc.c:29
+29		const char* start = s; // address of first digit after "0x", "0b", or "-"
+31		int sign  = 0;   // 1 if positive, -1 if negative
+32		_find_sign(&start, &sign);
+_find_sign (start=0x7fffffffe340, sign=0x7fffffffe33c) at calc.c:49
+49		if(*start[0] == '-') {
+54			*sign = 1;   // No minus sign, so mark this as positive
+56	}
+_parse_integer (s=0x400a48 "0xa") at calc.c:34
+34		int base  = 0;   // 10 for decimal, 16 for hexadecimal, 2 for binary
+35		_find_base(&start, &base);
+_find_base (start=0x7fffffffe340, base=0x7fffffffe338) at calc.c:59
+59		if(*start[0] == '0' && *start[1] == 'x') {
+63		else if(*start[0] == '0' && *start[1] == 'b') {
+Run till exit from #0  _find_base (start=0x7fffffffe340, base=0x7fffffffe338)
+    at calc.c:63
+_parse_integer (s=0x400a48 "0xa") at calc.c:37
+37		int value = 0;   // This will be the return value from this function
+$2 = {int (const char *, const char, const char *)} 0x400566 <calculate>
+38		int i = 0;
+39		while(start[i] != '\0') {
+40			value *= base;
+41			value += start[i] - (start[i] <= '9' ? '0' : 'a' - 10);
+42			i++;
+39		while(start[i] != '\0') {
+40			value *= base;
+41			value += start[i] - (start[i] <= '9' ? '0' : 'a' - 10);
+42			i++;
+39		while(start[i] != '\0') {
+40			value *= base;
+41			value += start[i] - (start[i] <= '9' ? '0' : 'a' - 10);
+42			i++;
+39		while(start[i] != '\0') {
+45		return value * sign;
+46	}
+calculate (lhs_str=0x400a48 "0xa", operator=43 '+', rhs_str=0x400a46 "3")
+    at calc.c:11
+11		int rhs_int = _parse_integer(rhs_str);
+_parse_integer (s=0x400a46 "3") at calc.c:29
+29		const char* start = s; // address of first digit after "0x", "0b", or "-"
+31		int sign  = 0;   // 1 if positive, -1 if negative
+32		_find_sign(&start, &sign);
+_find_sign (start=0x7fffffffe340, sign=0x7fffffffe33c) at calc.c:49
+49		if(*start[0] == '-') {
+54			*sign = 1;   // No minus sign, so mark this as positive
+56	}
+_parse_integer (s=0x400a46 "3") at calc.c:34
+34		int base  = 0;   // 10 for decimal, 16 for hexadecimal, 2 for binary
+35		_find_base(&start, &base);
+_find_base (start=0x7fffffffe340, base=0x7fffffffe338) at calc.c:59
+59		if(*start[0] == '0' && *start[1] == 'x') {
+$3 = (const char **) 0x7fffffffe340
+0x7fffffffe340:	0x46	0x0a	0x40	0x00	0x00	0x00	0x00	0x00
+0x7fffffffe340:	0x400a46
+$4 = 0x400a46 "3"
+$5 = 51 '3'
+Cannot access memory at address 0x15400000003
+$6 = 0 '\000'
+Cannot access memory at address 0x15400000003
